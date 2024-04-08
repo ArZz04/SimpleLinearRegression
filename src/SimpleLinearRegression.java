@@ -3,6 +3,23 @@ public class SimpleLinearRegression {
     private double slope;
     private double intercept;
 
+    private double b0;
+    private double b1;
+
+    /*
+    *
+    * - B0
+    * - B1
+    *
+    * + SLR()
+    * + SLR(ds:DataSet, dm:DiscreteMaths)
+    * + toComputeB0(): float
+    * + toComputeB1(): float
+    * + printRegressionEQ()
+    * + toPredict(data:float)
+    *
+     */
+
     public void fit(int[] x, int[] y) {
         int n = x.length;
         DiscreteMaths dm = new DiscreteMaths();
