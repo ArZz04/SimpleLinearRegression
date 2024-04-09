@@ -1,24 +1,7 @@
 public class SimpleLinearRegression {
 
-    private double slope;
-    private double intercept;
-
-    private double b0;
-    private double b1;
-
-    /*
-    *
-    * - B0
-    * - B1
-    *
-    * + SLR()
-    * + SLR(ds:DataSet, dm:DiscreteMaths)
-    * + toComputeB0(): float
-    * + toComputeB1(): float
-    * + printRegressionEQ()
-    * + toPredict(data:float)
-    *
-     */
+    private double intercept;   // es lo mismo a B0
+    private double slope;       // es lo mismo a B1
 
     public void fit(int[] x, int[] y) {
         int n = x.length;
@@ -30,20 +13,20 @@ public class SimpleLinearRegression {
         double sumXY = dm.sumXY(x,y);
         double sumXSquare = dm.sumXSquare(x);
 
-        // Calcular los coeficientes de la regresión lineal
-        slope = (n * sumXY - sumX * sumY) / (n * sumXSquare - sumX * sumX);
-        intercept = (sumY - slope * sumX) / n;
+        // Calcular los coeficientes de la regresión lineaL
+        slope = (n * sumXY - sumX * sumY) / (n * sumXSquare - sumX * sumX); // B1
+        intercept = (sumY - slope * sumX) / n; // B0
     }
 
     public double predict(int x) {
         return slope * x + intercept;
     }
 
-    public double getSlope() {
+    public double getSlope() { // Obtener B1
         return slope;
     }
 
-    public double getIntercept() {
+    public double getIntercept() { // Obtener B2
         return intercept;
     }
 
@@ -57,11 +40,11 @@ public class SimpleLinearRegression {
         linearRegression.fit(xData, yData);
 
         // Obtener los coeficientes de la regresión lineal
-        double slopeLinear = linearRegression.getSlope();
-        double interceptLinear = linearRegression.getIntercept();
+        double interceptLinear = linearRegression.getIntercept(); // B0
+        double slopeLinear = linearRegression.getSlope(); // B1
 
         // Imprimir la ecuación de regresión lineal
-        System.out.println("Ecuación de regresión lineal: Y = " + slopeLinear + " * X + " + interceptLinear);
+        System.out.println("Ecuación de regresión lineal: Y = " + slopeLinear + "(B1) * X + " + interceptLinear + "(B0)");
 
         // Predecir el valor de Y para un nuevo valor de X usando regresión lineal
         double predictedYLinear = linearRegression.predict(newXLinear);
