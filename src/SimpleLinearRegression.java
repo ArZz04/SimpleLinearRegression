@@ -19,7 +19,7 @@ public class SimpleLinearRegression {
     }
 
     public double predict(int x) {
-        return slope * x + intercept;
+        return  intercept + slope * x;
     }
 
     public double getSlope() { // Obtener B1
@@ -43,11 +43,13 @@ public class SimpleLinearRegression {
         double interceptLinear = linearRegression.getIntercept(); // B0
         double slopeLinear = linearRegression.getSlope(); // B1
 
-        // Imprimir la ecuación de regresión lineal
-        System.out.println("Ecuación de regresión lineal: Y = " + slopeLinear + "(B1) * X + " + interceptLinear + "(B0)");
-
         // Predecir el valor de Y para un nuevo valor de X usando regresión lineal
         double predictedYLinear = linearRegression.predict(newXLinear);
+
+        // Imprimir la ecuación de regresión lineal
+        System.out.println("Ecuación de regresión lineal: ŷ = " + interceptLinear + " (B0) + " + slopeLinear + " (B1) * " + newXLinear + "(X)");
+
+        // Imprimir la prediccion de regresión lineal
         System.out.println("Predicción lineal para X = " + newXLinear + ": Y = " + predictedYLinear);
     }
 }
