@@ -12,7 +12,7 @@ public class DiscreteMaths {
         return totalX;
     }
 
-    public int sumY(int y[]) {
+    public int sumY(int[] y) {
         int totalY = 0;
 
         for (int i = 0; i < y.length; i++)
@@ -21,7 +21,7 @@ public class DiscreteMaths {
         return totalY;
     }
 
-    public int sumXY(int x[], int y[] ) {
+    public int sumXY(int[] x, int[] y) {
         int totalXY = 0;
 
         for (int i = 0; i < x.length; i++)
@@ -30,7 +30,7 @@ public class DiscreteMaths {
         return totalXY;
     }
 
-    public int sumXSquare(int x[]) {
+    public int sumXSquare(int[] x) {
         int totalXSquare = 0;
 
         for (int i = 0; i < x.length; i++)
@@ -39,7 +39,7 @@ public class DiscreteMaths {
         return totalXSquare;
     }
 
-    public int sumXCube(int x[]) {
+    public int sumXCube(int[] x) {
         int totalXCube = 0;
 
         for (int i = 0; i < x.length; i++)
@@ -48,7 +48,7 @@ public class DiscreteMaths {
         return  totalXCube;
     }
 
-    public int sumXSquareY(int x[], int y[]) {
+    public int sumXSquareY(int[] x, int[] y) {
         int totalXSquareY = 0;
 
         for (int i = 0; i< x.length; i++)
