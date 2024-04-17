@@ -21,14 +21,15 @@ public class DiscreteMaths {
         return totalY;
     }
 
-    public int sumXY(int[] x, int[] y) {
+    public int sumXY(int[] x, int[] y){
         int totalXY = 0;
 
-        for (int i = 0; i < x.length; i++)
+        for (int i =0; i < x.length; i++)
             totalXY += x[i] * y[i];
 
-        return totalXY;
+        return  totalXY;
     }
+
 
     public int sumXSquare(int[] x) {
         int totalXSquare = 0;
